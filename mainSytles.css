@@ -2,4 +2,31 @@
     font-size:24px
 }.pb5{
     padding-bottom:2%;
+}.orange{
+    color: #FC9E4F;
+}.orange:hover{
+    color: #FC9E4F;
+    filter: brightness(75%);
+}
+.blue{
+    color: #208AAE;
+}
+.green{
+    color: #73AB84;
+}.green:hover{
+   color:#568f67; 
+}
+.bg-orange{
+    background-color: #FC9E4F;
+}.bg-blue{
+    background-color: #208AAE;
+}.dropdown-item:hover{
+    background-color: #208AAE;
+}.mx-10{
+    margin-left:25%;
+}
+.bg-green{
+    background-color: #73AB84;
+}.icon{
+    padding-bottom:2.5%;
 }

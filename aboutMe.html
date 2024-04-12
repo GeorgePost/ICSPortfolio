@@ -13,40 +13,34 @@
 </head>
 
 <body class="bg-dark text-white">
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Me</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                     </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">OOP</a>
-                            <a class="dropdown-item" href="#">Array/ArrayList</a>
-                            <a class="dropdown-item" href="#">Search and Sort</a>
-                            <a class="dropdown-item" href="#">Recursion</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <h1 class="d-flex justify-content-center ">About Me</h1>
+    <nav class=" navbar navbar-expand-lg bg-blue ">
+        <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav fs-24">
+                <li class="nav-item px-5">
+                    <a class="nav-link orange px-5" href="#"><image class="icon" src="home.svg"></image> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link orange px-5" href="#"><image class="icon" src="user.svg"></image> About Me</a>
+                </li>
+                <li class="nav-item dropdown px-5">
+                    <a class="nav-link dropdown-toggle orange px-5" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Learning <image src="book-open.svg">
+                    </a>
+                    <div class="dropdown-menu mx-10 bg-blue" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item orange" href="OOP.html">OOP</a>
+                        <a class="dropdown-item orange" href="#">Array/ArrayList</a>
+                        <a class="dropdown-item orange" href="#">Search and Sort</a>
+                        <a class="dropdown-item orange" href="#">Recursion</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="d-flex justify-content-center p-3">About Me</h1>
     <div class="d-flex justify-content-around ">
-        <div class="px-5 ">
+        <div class="mx-5 ">
             <p class="fs-24 ">Hello, This page is about my Passions for all favourite things. You will see that I put some basketball videos on the side to show my first passions. Basketball has been a more recent passion of mine, starting at about 9th grade. However,
-                it has been my most rewarding passion as I find exercise is enojoyable in general. My favourite Players are
+                it has been my most rewarding passion as I find exercise is enojoyable in general.<br> Here are my favourite players
                 <ul class="fs-24 ">
                     <li>
                         Nikola Jokic
@@ -55,7 +49,7 @@
                 </ul>
             </p>
         </div>
-        <div class="px-5 ">
+        <div class="px-5">
             <div id="carouselExampleIndicators " class="carousel slide " data-ride="carousel ">
                 <ol class="carousel-indicators ">
                     <li data-target="#carouselExampleIndicators " data-slide-to="0 " class="active "></li>
