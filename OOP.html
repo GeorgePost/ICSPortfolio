@@ -49,22 +49,22 @@
         </ul>
         <table class="table">
             <tr>
-                <th scope="col"> Term</th>
                <th scope="col">Object</th> 
                <th scope="col">Method</th>
                <th scope="col">Attributes</th>
+               <th scope="col">Constructor</th>
             </tr>
             <tr>
-                <th scope="col">Explaination</th>
                 <td>An instance of a class</td>
                 <td>Functions an object can do</td>
                 <td>Variables within an object</td>
+                <td>Method: creates the object and assigns attributes.</td>
             </tr>
         </table>
     </div>
     <!--Image of an example-->
     <div class="col-sm bg-green" >
-        <image class="d-block mx-auto" src="OOPExample.png" width="60%">
+        <image class="d-block mx-auto" src="OOPExample.png" width="80%">
     </div>
     </div>
     <!--Modifers-->
@@ -130,6 +130,34 @@
             <p class="fs-24 px-3"><span class="purple font-weight-bold">static</span>: attributes or methods that belong to the class no the object (Population in TiposedLarenim Project)</p>
             <p class="fs-24 px-3"><span class="purple font-weight-bold">final</span>: Once an attribute is intialized it can no longer change.</p> 
             <p class="fs-24 px-3"><span class="purple font-weight-bold">abstract</span>: It is a method that its function has not been defined. Classes that contains these methods are Abstract</p>
+        </div>
+    </div>
+    <div style="width:101%" class="row">
+        <div class="bg-blue white col-md p-3" >
+            <h3 class="text-center">SubClass vs Super Class</h3>
+            <table class=" mx-4 table fs-20 table-bordered polymorphismTable">
+                <tr>
+                    <th scope="col">SuperClass</th>
+                    <th scope="col">SubClass</th>
+                </tr>
+                <tr>
+                    <td>More Generic Form of a class. Called the parent class. Can store children instances in the parent object. </td>
+                    <td>Inherits the attributes and methods. Is more specific in functionality and can override the parent class. Its constructor needs to run the parent constructor.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="bg-black white col-md p-3">
+            <h3 class="text-center">Abstract Classes vs Interfaces</h3>
+            <table class=" table fs-20 table-bordered polymorphismTable ">
+                <tr>
+                    <th scope="col">Abstract Class</th>
+                    <th scope="col">Interfaces</th>
+                </tr>
+                <tr>
+                    <td>Acts like a normal class, but has some undefined functions for methods called abstract methods. These are to be overriden by a subclass. If the subclass doesn't override them, it has to become an abstract class too. Allows for Atrributes.</td>
+                    <td>An abstract class, but it cannot define any functions. It also can't have any attributes. It is a list of methods needed for classes that implement the interface.</td>
+                </tr>
+            </table>
         </div>
     </div>
     <!-- Optional JavaScript -->
