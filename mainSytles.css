@@ -1,6 +1,12 @@
 .fs-24{
     font-size:24px
-}.pb5{
+}.fs-20{
+    font-size:20px;
+}
+.fs-14{
+    font-size:14px;
+}
+.pb5{
     padding-bottom:2%;
 }.orange{
     color: #FC9E4F;
@@ -10,6 +16,10 @@
 }
 .blue{
     color: #208AAE;
+}.white{
+    color:white;
+}.purple{
+    color:#C678DD;
 }
 .green{
     color: #73AB84;
@@ -20,13 +30,20 @@
     background-color: #FC9E4F;
 }.bg-blue{
     background-color: #208AAE;
-}.dropdown-item:hover{
+}.bg-green{
+    background-color: #73AB84;
+}.bg-black{
+    background-color: #343A40;
+}
+.dropdown-item:hover{
     background-color: #208AAE;
 }.mx-10{
     margin-left:25%;
 }
-.bg-green{
-    background-color: #73AB84;
-}.icon{
+.icon{
     padding-bottom:2.5%;
+}.AccessModiferTable{
+    width:110%;
+}.AccessModiferTable th{
+    width:12%
 }

@@ -14,49 +14,123 @@
 
 <body>
     <!-- Introduction to OOP-->
-    <div>
-    <div>
-        <h1>Object Oriented Programing(OOP)</h1>
+    <nav class=" navbar navbar-expand-lg bg-blue ">
+        <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav fs-24">
+                <li class="nav-item px-5">
+                    <a class="nav-link orange px-5" href="#"><image class="icon" src="./media/home.svg"></image> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link orange px-5" href="#"><image class="icon" src="media/user.svg"></image> About Me</a>
+                </li>
+                <li class="nav-item dropdown px-5">
+                    <a class="nav-link dropdown-toggle orange px-5" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Learning <image src="media/book-open.svg">
+                    </a>
+                    <div class="dropdown-menu mx-10 bg-blue" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item orange" href="OOP.html">OOP</a>
+                        <a class="dropdown-item orange" href="#">Array/ArrayList</a>
+                        <a class="dropdown-item orange" href="#">Search and Sort</a>
+                        <a class="dropdown-item orange" href="#">Recursion</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="bg-black white p-4">
+        <h1 class="text-center">Object Oriented Programing(OOP)</h1>
+    </div>
+    <div style="width:101%" class="row fs-24 ">
+    <div class="col-md bg-orange px-5 p-3">
         <h2>Objects</h2>
         <ul>
             <li>A way to view the world</li>
             <li>Some Terms Asscoiated with OOP</li>
         </ul>
-        <table>
+        <table class="table">
             <tr>
-               <td>Object</td> 
-               <td>Method</td>
-               <td>Attributes</td>
+                <th scope="col"> Term</th>
+               <th scope="col">Object</th> 
+               <th scope="col">Method</th>
+               <th scope="col">Attributes</th>
             </tr>
             <tr>
+                <th scope="col">Explaination</th>
                 <td>An instance of a class</td>
                 <td>Functions an object can do</td>
-                <td>Variable asscoiated with object</td>
+                <td>Variables within an object</td>
             </tr>
         </table>
     </div>
     <!--Image of an example-->
-    <div>
-        <image>
+    <div class="col-sm bg-green" >
+        <image class="d-block mx-auto" src="OOPExample.png" width="60%">
     </div>
     </div>
     <!--Modifers-->
-    <div>
+    <div class="bg-blue white p-2" >
+        <h2 class="text-center">Modifiers</h2>
+        <ul class="fs-24 mx-auto" style="width:30%" >
+            <li>Used to modify variables and methods</li>
+            <li>Important for classes and objects</li>
+        </ul>
+    </div>
+    <div style="width:101%" class="row">
+        <div class="px-5 p-3 col-sm bg-green">
         <!--Access Modifiers-->
-        <table>
+        <h3>Access Modifers</h3>
+        <ul class="fs-24">
+            <li>Decides were a method or attribute could be accessed(scope)</li>
+        </ul>
+        <table class="table fs-20 table-bordered AccessModiferTable">
             <tr>
-                <td>Modifer</td>
-                <td>Class</td>
-                <td>Package</td>
-                <td>Subclass in Package</td>
-                <td>Subclass not in Package</td>
-                <td>Global</td>
+                <th scope="col">Modifer</th>
+                <th scope="col">Class</th>
+                <th scope="col">Package</th>
+                <th scope="col">Subclass</th>
+                <th scope="col">Global</th>
             </tr>
             <tr>
-                <td>Public</td>
-                <td>Proctected</td>
+                <th scope="col">Public</th>
+                <td class="bg-success"></td>
+                <td class="bg-success"></td>
+                <td class="bg-success"></td>
+                <td class="bg-success"></td>
+            </tr>
+            <tr>
+                <th scope="col">Proctected</th>
+                <td class="bg-success"></td>
+                <td class="bg-success"></td>
+                <td class="bg-success"></td>
+                <td class="bg-danger"></td>
+            </tr>
+            <tr>
+                <th scope="col">Default</th>
+                <td class="bg-success"></td>
+                <td class="bg-success"></td>
+                <td class="bg-success"></td>
+                <td class="bg-danger"></td>
+            </tr>
+            <tr>
+                <th scope="col">Private</th>
+                <td class="bg-success"></td>
+                <td class="bg-danger"></td>
+                <td class="bg-danger"></td>
+                <td class="bg-danger"></td>
+            </tr>
+            <tr>
+                <td class="fs-14" colspan="5">The difference, between protected and default is that protected can access subclasses outside of a package. </td>
             </tr>
         </table>
+        </div>
+        <div class="p-3 col-md bg-orange">
+            <h3 class="">Keywords</h3>
+            <p class="fs-24">Here are some Useful Keywords in OOP</p>
+            <p class="fs-24 px-3"><span class="purple font-weight-bold">this</span>: Refers to the class, used to not create confusion between local variables and class attribtues</p>
+            <p class="fs-24 px-3"><span class="purple font-weight-bold">static</span>: attributes or methods that belong to the class no the object (Population in TiposedLarenim Project)</p>
+            <p class="fs-24 px-3"><span class="purple font-weight-bold">final</span>: Once an attribute is intialized it can no longer change.</p> 
+            <p class="fs-24 px-3"><span class="purple font-weight-bold">abstract</span>: It is a method that its function has not been defined. Classes that contains these methods are Abstract</p>
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
