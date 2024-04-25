@@ -28,7 +28,7 @@
                         </a>
                         <div class="dropdown-menu mx-10 bg-blue" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item orange" href="OOP.html">OOP</a>
-                            <a class="dropdown-item orange" href="#">Array/ArrayList</a>
+                            <a class="dropdown-item orange" href="arrays.html">Array/ArrayList</a>
                             <a class="dropdown-item orange" href="#">Search and Sort</a>
                             <a class="dropdown-item orange" href="recursion.html">Recursion</a>
                         </div>
@@ -40,25 +40,22 @@
     <div class="bg-black p-2">
         <h1 class="white text-center">Recursion</h1>
     </div>
-    <div class="row bg-green" style="width:101%" >
-        <div class="col-md p-4 fs-24">
+    <div class="row" style="width:101%" >
+        <div class="col-md p-4 fs-24 bg-green">
             <div class="px-3">
                 <h2>What is Recursion</h2>
                 <ul>
                     <li>When functions call themselves</li>
                     <li>This is to call the function with different input</li>
                     <li>The function will continue to run until it meets the tail</li>
-                    <li>The tail is the final peice of input that is the final iteration</li>
+                    <li>The tail is the final iteration of a recursive function.</li>
                     <li>The tail will be activated by base condition is meet</li>
+                    <li>After the program reaches the tail it evaluates all previous method calls</li>
                 </ul>
             </div>
+            <image width="200px" class="d-block mx-auto" src="media/Computer.gif"></image>
         </div>
-        <div class="col-md">
-            <!--Recursion Gif-->
-        </div>
-    </div>
-    <div class="row bg-orange" style="width:101%" >
-        <div  class="col-md p-4 fs-24">
+        <div  class="col-md p-4 fs-24 bg-orange">
             <div class="px-3">
                 <h2>Example of Recursion</h2>
                 <p>A common example of recursion is the power function</p>
@@ -68,14 +65,22 @@
                     <li>However, the method has the exponent one less</li>
                     <li>Eventually the exponent will become 0 and you can return 1</li>
                 </ul>
+                <div class="bg-darkorange p-3">
+                <pre class="noPadding"><code id="copy1">public int timesTableR(int base,int exponent){
+    if(exponent<=0){
+        return 1; 
+    }
+    return base*timesTableR(base,exponent-1);
+}</code></pre>  
+                </div>
+                <div class="bg-darkorange d-flex justify-content-end">
+                    <button onclick="copyContent()" class="btn copybutton" >
+                        <image src="media/copy.png" height="30"></image>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="col-md">
-            <!--My power function code-->
-        </div>
-    </div>
-    <div class="row bg-blue" style="width:101%" >
-        <div class=" col-md p-4 fs-24">
+        <div class=" col-md p-4 fs-24 bg-pink">
             <div class="px-3">
                 <h3>Applications of Recursion</h3>
                 <p>Recursion is used in alot of applications.<br>Here are some notable ones</p>
@@ -84,8 +89,18 @@
                     <li>Depth First Search(DFS) used for graph theory</li>
                     <li>Math: Fibonnacci Sequence and the Akermann Function</li>
                 </ul>
+                <image width="250px" class="d-block mx-auto" src="media/DFS.gif"></image>
             </div>
         </div>
+    </div>
+    <div class="row bg-orange" style="width:101%" >
+        
+        <div class="col-md">
+            <!--My power function code-->
+        </div>
+    </div>
+    <div class="row bg-blue" style="width:101%" >
+        
         <div class="col-md fs-24">
             <!--DFS gif-->
         </div>
@@ -96,4 +111,15 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        let text = document.getElementById("copy1").innerHTML;
+        const copyContent = async () => {
+        try {
+            await navigator.clipboard.writeText(text);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+  }
+    </script>
 </body>

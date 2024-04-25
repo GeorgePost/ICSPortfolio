@@ -28,12 +28,18 @@
 }
 .bg-orange{
     background-color: #FC9E4F;
-}.bg-blue{
+}.bg-darkorange{
+    background-color: #FC9E4F;
+    filter: brightness(65%);
+}
+.bg-blue{
     background-color: #208AAE;
 }.bg-green{
     background-color: #73AB84;
 }.bg-black{
     background-color: #343A40;
+}.bg-pink{
+    background: #CFBFF7;
 }
 .dropdown-item:hover{
     background-color: #208AAE;
@@ -54,4 +60,12 @@
     width:50%
 }.abstractTable th{
     width:25%;
+}.noPadding{
+    margin-bottom:-1%
+}.copybutton{
+    background-color: #FC9E4F;
+}
+.copybutton:hover{
+    background-color: #FC9E4F;
+    filter: brightness(120%);
 }
