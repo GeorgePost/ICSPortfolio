@@ -64,7 +64,7 @@
     </div>
     <!--Image of an example-->
     <div class="col-sm bg-green" >
-        <image class="d-block mx-auto" src="OOPExample.png" width="80%">
+        <image class="d-block mx-auto" src="media/OOPExample.png" width="80%">
     </div>
     </div>
     <!--Modifers-->
@@ -133,7 +133,7 @@
         </div>
     </div>
     <div style="width:101%" class="row">
-        <div class="bg-blue white col-md p-3" >
+        <div class="bg-blue white col-md p-3 px-5" >
             <h3 class="text-center">SubClass vs Super Class</h3>
             <table class=" mx-4 table fs-20 table-bordered polymorphismTable">
                 <tr>
@@ -141,21 +141,28 @@
                     <th scope="col">SubClass</th>
                 </tr>
                 <tr>
-                    <td>More Generic Form of a class. Called the parent class. Can store children instances in the parent object. </td>
-                    <td>Inherits the attributes and methods. Is more specific in functionality and can override the parent class. Its constructor needs to run the parent constructor.</td>
+                    <td>More Generic Form of a class. Called the parent class. Can store children instances in the parent object. Downcasting require to run child's <br> non-overriding methods</td>
+                    <td>Inherits the attributes and methods (More specific functionality) and can override the parent class. Its constructor needs to run parent's constructor.</td>
                 </tr>
+                <tr>
+                    <td  colspan="2"> <image class="mx-auto d-block" src="media/SuperVsSubClass.png" height="200px"></image></td>
+                </tr> 
             </table>
         </div>
         <div class="bg-black white col-md p-3">
             <h3 class="text-center">Abstract Classes vs Interfaces</h3>
-            <table class=" table fs-20 table-bordered polymorphismTable ">
+            <table class=" table fs-20 table-bordered polymorphismTable mx-4">
                 <tr>
                     <th scope="col">Abstract Class</th>
                     <th scope="col">Interfaces</th>
                 </tr>
                 <tr>
-                    <td>Acts like a normal class, but has some undefined functions for methods called abstract methods. These are to be overriden by a subclass. If the subclass doesn't override them, it has to become an abstract class too. Allows for Atrributes.</td>
-                    <td>An abstract class, but it cannot define any functions. It also can't have any attributes. It is a list of methods needed for classes that implement the interface.</td>
+                    <td>Acts like a normal class, but has some undefined functions for methods called abstract methods. These are to be overriden by a subclass. If all abstract methods are not overriden by child, child must be abstract.</td>
+                    <td>An abstract class, but it cannot define any functions. It also can't set any attributes. It is a list of methods needed for classes that implement the interface. If all methods are not implemented, class becomes abstract.</td>
+                </tr>
+                <tr>
+                    <td><image src="media/AbstractClass.png" height="150"></image></td>
+                    <td><image src="media/Interface.png" height="150"></image></td>
                 </tr>
             </table>
         </div>
