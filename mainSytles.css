@@ -50,4 +50,8 @@
     width:90%
 }.polymorphismTable th{
     width:45%;
+}.abstractTable{
+    width:50%
+}.abstractTable th{
+    width:25%;
 }
