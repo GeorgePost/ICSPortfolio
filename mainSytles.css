@@ -8,6 +8,8 @@
 }
 .pb5{
     padding-bottom:2%;
+}.codeOrange{
+    color: #FFA500;
 }.orange{
     color: #FC9E4F;
 }.orange:hover{
@@ -29,8 +31,7 @@
 .bg-orange{
     background-color: #FC9E4F;
 }.bg-darkorange{
-    background-color: #FC9E4F;
-    filter: brightness(65%);
+    background-color: #e46a04;
 }
 .bg-blue{
     background-color: #208AAE;
@@ -62,10 +63,7 @@
     width:25%;
 }.noPadding{
     margin-bottom:-1%
-}.copybutton{
-    background-color: #FC9E4F;
 }
 .copybutton:hover{
-    background-color: #FC9E4F;
-    filter: brightness(120%);
-}.p-
+    filter: brightness(50%);
+}

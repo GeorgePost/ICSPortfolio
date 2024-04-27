@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="mainSytles.css">
+    <link rel="stylesheet" href="/path/to/styles/default.css">
+    <script src="/path/to/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <title>Home Page</title>
 </head>
 <body>
@@ -75,14 +78,84 @@
                     <td>You can use Array.remove(i), which removes index i in the arrayList</td>
                 </tr>
             </table>
+            <h3>Example</h3>
+            <p>On the right you will see code from my Candidate Class. I chose this code to highlight the key differences between arrays and arrayLists. Arrays are used when the length is known whereas Arraylists are used when the length is not known. This is why we are using ArrayLists when getting Viable Candidates as there 0 to 10 viable candidates.</p>
         </div>
-        <div class="col-md">
-            <applet></applet> 
+        <div class="col-md bg-dark fs-16">
+            <div class="d-flex justify-content-end white ">
+                <p class="p-3">Copy</p>
+                <button style="margin-bottom:1%;" onclick="copyContent()" class="btn bg-dark" >
+                    <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+                </button>
+            </div>
+            <pre class="java white"><code id="copy1"><span class="codeOrange">/*
+Name: George Postica
+Date: March 20, 2024
+Teacher: Ms.Krasteva
+Descritpion: The CandidateList class where I made all the functionality for the Test
+*/</span>
+<span class="purple">import</span> java.util.*;
+<span class="purple">public class</span> CandidateList{
+    <span class="purple">private</span> Candidate[] myCList;
+    <span class="codeOrange">//constructor</span>
+    <span class="purple">public</span> CandidateList(Candidate[] list){
+        <span class="codeOrange">//transfering all values from one class to another instead of assigning same memory</span>
+        myCList= new Candidate[list.length];
+        <span class="purple">for</span>(<span class="purple">int</span> i=0;i&lt;list.length;i++){
+            myCList[i]=list[i];
+        }
+    }
+    
+    <span class="purple">public</span> void computeVotePercents(){
+        <span class="purple">double</span> allVotes=0.0;
+        <span class="purple">for</span>(<span class="purple">int</span> i=0;i&lt;myCList.length;i++){
+            allVotes+=myCList[i].getNumVotes();
+        }
+        
+        <span class="purple">for</span>(<span class="purple">int</span> i=0;i&lt;myCList.length;i++){
+            <span class="purple">double</span> percentage= (myCList[i].getNumVotes()/allVotes)*100.0;
+            myCList[i].setVotePercent(percentage);
+        }
+    }
+    <span class="codeOrange">//gives a list of viables candidates (10% or higher voting)</span>
+    <span class="purple">public</span> ArrayList&lt;Candidate&gt; getViableList(){
+    
+        ArrayList&lt;Candidate&gt; possCands= new ArrayList&lt;Candidate&gt;();
+        <span class="purple">for</span>(int i=0;i &lt; myCList.length;i++){
+            <span class="codeOrange">//checks to see if the vote precent is higher than 10% then adds to list</span>
+            <span class="purple">if</span>(myCList[i].getVotePercent()>=10.0){
+                possCands.add(myCList[i]);
+            }
+        }
+        <span class="codeOrange">//returns the list</span>
+        <span class="purple">return</span> possCands;
+    }
+    <span class="purple">public void</span> printViable(){
+        <span class="codeOrange">//uses pervious method to find the viable candidates</span>
+        ArrayList &lt;Candidate&gt; possCands=getViableList();
+        <span class="codeOrange">//prints out viable candidates</span>
+        <span class="purple">for</span>(<span class="purple">int</span> i=0;i &lt; possCands.size();i++){
+            Candidate x=possCands.get(i);
+            System.out.println(x.getName()+" "+x.getVotePercent());
+        }
+    }
+}</code></pre>
         </div>
     </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        let text = "/*\nName: George Postica\nDate: March 20, 2024\nTeacher: Ms.Krasteva\nDescritpion: The CandidateList class where I made all the functionality for the Test\n*/\nimport java.util.*;\npublic class CandidateList{\n   private Candidate[] myCList;\n   //constructor\n   public CandidateList(Candidate[] list){\n   //transfering all values from one class to another instead of assigning same memory\n      myCList= new Candidate[list.length];\n      for(int i=0;i<list.length;i++){\n         myCList[i]=list[i];\n      }\n   }\n   //this first finds the total amount of votes and then calculates the percentage for each Candidate\n   public void computeVotePercents(){\n      //finding all votes\n      double allVotes=0.0;\n      for(int i=0;i<myCList.length;i++){\n         allVotes+=myCList[i].getNumVotes();\n      }\n      //finding percentage\n      for(int i=0;i<myCList.length;i++){\n         double percentage= (myCList[i].getNumVotes()/allVotes)*100.0;\n         myCList[i].setVotePercent(percentage);\n      }\n   }\n   //gives a list of viables candidates (10% or higher voting)\n   public ArrayList<Candidate> getViableList(){\n   \n      ArrayList<Candidate> possCands= new ArrayList<Candidate>();\n      for(int i=0;i<myCList.length;i++){\n         //checks to see if the vote precent is higher than 10% then adds to list\n         if(myCList[i].getVotePercent()>=10.0){\n            possCands.add(myCList[i]);\n         }\n      }\n      //returns the list\n      return possCands;\n   }\n   public void printViable(){\n   //uses pervious method to find the viable candidates\n      ArrayList<Candidate> possCands=getViableList();\n      //prints out viable candidates\n      for(int i=0;i<possCands.size();i++){\n         Candidate x=possCands.get(i);\n         System.out.println(x.getName()+\" \"+x.getVotePercent());\n      }\n   }\n}";
+        const copyContent = async () => {
+        try {
+            await navigator.clipboard.writeText(text);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
