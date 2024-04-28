@@ -7,12 +7,54 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="mainSytles.css">
+    <link rel="stylesheet" href="/path/to/styles/default.css">
+    <script src="/path/to/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <title>Home Page</title>
-  </head>
-  <body>
-    <h1>Welcome to my Portfolio</h1>
-    <a href="aboutMe.html">Go to about me</a>
+</head>
+<body>
+  <nav class=" navbar navbar-expand-lg bg-blue ">
+      <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
+          <ul class="navbar-nav fs-24">
+              <li class="nav-item px-5">
+                  <a class="nav-link orange px-5" href="index.html"><image class="icon" src="./media/home.svg"></image> Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item px-5">
+                  <a class="nav-link orange px-5" href="#"><image class="icon" src="media/user.svg"></image> About Me</a>
+              </li>
+              <li class="nav-item dropdown px-5">
+                  <a class="nav-link dropdown-toggle orange px-5" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Learning <image src="media/book-open.svg">
+                  </a>
+                  <div class="dropdown-menu mx-10 bg-blue" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item orange" href="OOP.html">OOP</a>
+                      <a class="dropdown-item orange" href="arrays.html">Array/ArrayList</a>
+                      <a class="dropdown-item orange" href="#">Search and Sort</a>
+                      <a class="dropdown-item orange" href="recursion.html">Recursion</a>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <div style="width:101%;"  class="row">
+    <div style="width:40%;" class="col-sm p-3 px-5 fs-24 bg-green">
+      <h1>Welcome to my Portfolio</h1>
+      <p>Hi, I am George and this my Portfio</p>
+      <p>This is where I am showcasing what I have learned in this comptuer science course. The topics I will cover are...</p>
+      <ul>
+        <li>Object Oriented Porgramming(OOP)</li>
+        <li>Arrays and ArrayLists</li>
+        <li>Searching and Sorting</li>
+        <li>Recursion</li>
+      </ul>
+      <p>I will be showing off the projects I have done in each section of the course and explaining the concept with my own examples.</p>
+      <p>There will also be an about me page, which will cover other coding projects, my other passions and some freqeuntly asked questions</p>
+    </div>
+    <div class="col-md p-3 bg-pink">
+      <image width="602" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2R6dXIyYzU2em83bDZydHY2MmNna2xoY2p6ZWozMTlyaGh5M3dqZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/f6hnhHkks8bk4jwjh3/giphy.gif"></image>
+    </div>
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
