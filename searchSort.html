@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="mainSytles.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <div>
+        <nav class=" navbar navbar-expand-lg bg-blue ">
+            <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav fs-24">
+                    <li class="nav-item px-5">
+                        <a class="nav-link orange px-5" href="index.html"><image class="icon" src="./media/home.svg"></image> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item px-5">
+                        <a class="nav-link orange px-5" href="#"><image class="icon" src="media/user.svg"></image> About Me</a>
+                    </li>
+                    <li class="nav-item dropdown px-5">
+                        <a class="nav-link dropdown-toggle orange px-5" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Learning <image src="media/book-open.svg">
+                        </a>
+                        <div class="dropdown-menu mx-10 bg-blue" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item orange" href="OOP.html">OOP</a>
+                            <a class="dropdown-item orange" href="arrays.html">Array/ArrayList</a>
+                            <a class="dropdown-item orange" href="#">Search and Sort</a>
+                            <a class="dropdown-item orange" href="recursion.html">Recursion</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="bg-orange fs-24 p-3">
+        <h2 class="text-center">Big O notation</h2>
+        <div class="d-flex justify-content-center">
+        <ul >
+            <li>For time complexity used to measure the times an element is accessed in an array</li>
+            <li>Space complexity used a similar notation for the amount of elements stored in memory</li>
+            <li>For example if we access all the indexes of an array, we have a O(n) time complexity</li>
+            <li>Then, if we copy those indexes to another array, we have a O(n) space complexity</li>
+            <li>Big O notation allows to carefully examine alogrithims and find alternatives</li>
+            <li>For Sake of Simplicity, when seeing log it is refering to log<sub>2</sub></li>
+        </ul>
+        </div>
+    </div>
+    <div style="width:101%" class="row fs-20">
+        <div class="col-sm bg-green">
+        <div class="p-2 px-4">
+            <h3>Searching</h3>
+            <p>Finding the index of an element requires O(n) time if an array is unsorted as we need to traverse. However, if sorted we can use Binary sort to more quickly find an element</p>
+        </div>
+        <image class="d-block mx-auto" src="media/Seaching.gif" height="200"></image>
+        <div class="px-4 ">
+            <h3>Binary Search</h3>
+            <ul>
+                <li>The Precondition is that the array is sorted</li>
+                <li>Plays higher or lower until finding the target index</li>
+                <li>Time-Complexity Olog(n)</li>
+                <li>Java has a built-in function: Arrays.binarySearch()</li>
+            </ul>
+        </div>
+        <div class="bg-black m-3">
+        <div class="d-flex justify-content-end white fs-14">
+            <div>
+                <p class="px-1" style="padding-top:20%">Copy</p>
+            </div>
+            <button id="copyButton" style="margin-bottom:1%;" title="Copied!" data-placement="top" onclick="copyContent()" class="btn bg-dark" >
+                <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+            </button>
+        </div>
+<pre style="padding-bottom:1%;" class="px-4 fs-14 white"><code id="copy1"><span class="purple">public static int</span> bSearch(<span class="purple">int</span>[] arr, <span class="purple">int</span> left, <span class="purple">int</span> right, <span class="purple">int</span> x){
+    <span class="purple">if</span> (right >= left){
+        <span class="purple">int</span> mid = (left + right) / 2;
+        <span class="purple">if</span> (arr[mid] == x){
+            <span class="purple">return</span> mid;
+        }
+        <span class="purple">else if</span> (arr[mid] > x){
+        <span class="purple">return</span> bSearch(arr, left, mid - 1, x);
+        }
+        <span class="purple">else</span>{
+            <span class="purple">return</span> bSearch(arr, mid + 1, right, x);
+        }
+    }
+    <span class="purple">return</span> -1;
+}</code></pre>  
+        </div>
+        </div>
+        <div class="bg-black col-sm">
+            
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        
+        
+        let text = "public static int bSearch(int[] arr, int left, int right, int x){\n   if (right >= left){\n      int mid = (left + right) / 2;\n      if (arr[mid] == x){\n         return mid;\n      }\n      else if (arr[mid] > x){\n         return bSearch(arr, left, mid - 1, x);\n      }\n      else{\n         return bSearch(arr, mid + 1, right, x);\n      }\n   }\n   return -1;\n}";
+        const copyContent = async () => {
+        try {
+            await navigator.clipboard.writeText(text);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+  }
+    </script>
+</body>
