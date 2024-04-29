@@ -68,4 +68,6 @@
     filter: brightness(50%);
 }.recursiontable th{
     width:50%;
+}.fs-12{
+    font-size:12px;
 }

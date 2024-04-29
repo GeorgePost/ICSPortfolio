@@ -39,7 +39,7 @@
     </div>
     <div class="bg-orange fs-24 p-3">
         <h2 class="text-center">Big O notation</h2>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center fs-20">
         <ul >
             <li>For time complexity used to measure the times an element is accessed in an array</li>
             <li>Space complexity used a similar notation for the amount of elements stored in memory</li>
@@ -65,6 +65,7 @@
                 <li>Time-Complexity Olog(n)</li>
                 <li>Java has a built-in function: Arrays.binarySearch()</li>
             </ul>
+            <p>Here is an implementation from AP Classroom</p>
         </div>
         <div class="bg-black m-3">
         <div class="d-flex justify-content-end white fs-14">
@@ -92,17 +93,81 @@
 }</code></pre>  
         </div>
         </div>
-        <div class="bg-black col-sm">
-            
+        <div class="bg-pink col-sm p-3 fs-20">
+            <h2>Sorting</h2>
+            <p>Two important sorting algorithms: Selection and Merge</p>
+            <h3>Selection Sort</h3>
+            <ul>
+                <li>Starts at the first index and find the smallest element</li>
+                <li>Sets the smallest element as the first and continue to the next</li>
+                <li>This done till the array is sorted</li>
+                <li>Has a time-complexity of O(n<sup>2</sup>)</li>
+                <li>With a Space Complexity of O(1)</li>
+            </ul>
+            <p>Here is an implementation from AP Classroom</p>
+        <div class="bg-black">
+            <div class="d-flex justify-content-end white fs-14">
+                <div>
+                    <p class="px-1" style="padding-top:20%">Copy</p>
+                </div>
+                <button id="copyButton" style="margin-bottom:1%;" title="Copied!" data-placement="top" onclick="copyContent1()" class="btn bg-dark" >
+                    <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+                </button>
+            </div>
+    <pre style="padding-bottom:1%;" class="px-4 fs-14 white"><code id="copy1"><span class="purple">public static void</span> selectionSort(<span class="purple">int</span>[] elements){
+    <span class="purple">for</span> (<span class="purple">int</span> j = 0; j < elements.length - 1; j++){
+        <span class="purple">int</span> minIndex = j;
+        <span class="purple">for</span> (<span class="purple">int</span> k = j + 1; k < elements.length; k++){
+            <span class="purple">if</span> (elements[k] < elements[minIndex]){  
+                minIndex = k;
+            }
+        }
+        <span class="purple">if</span> (j != minIndex){
+            <span class="purple">int</span> temp = elements[j];
+            elements[j] = elements[minIndex];
+            elements[minIndex] = temp;
+        }
+    }
+}</code></pre> 
+
         </div>
+        <h3>Merge Sort</h3>
+        <ul>
+            <li>Divides, the array into smaller array</li>
+            <li>This is until the small arrays are length 1</li>
+            <li>We then, merge arrays, by comparing values {1},{9} becomes {1,9}</li>
+            <li>We then, get a new sorted array, we have to merge again {1,9}, {2,8} becomes {1,2,8,9}</li>
+            <li>Has a time complexity of O(n*log(n)). It stays the same.</li>
+        </ul>
+        <p>This is the implementation from ap clasroom. Merge() is not shown</p>
+        <div class="bg-black">
+            <div class="d-flex justify-content-end white fs-14">
+                <div>
+                    <p class="px-1" style="padding-top:20%">Copy</p>
+                </div>
+                <button id="copyButton" style="margin-bottom:1%;" title="Copied!" data-placement="top" onclick="copyContent2()" class="btn bg-dark" >
+                    <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+                </button>
+            </div>
+    <pre style="padding-bottom:1%;" class="px-4 fs-12 white"><code id="copy1"><span class="purple">public static void</span> mergeSortHelper(<span class="purple">int</span>[] elements,<span class="purple">int</span> from,<span class="purple">int</span> to,<span class="purple">int</span>[] temp){
+    <span class="purple">if</span> (from&lt;to){  
+        <span class="purple">int</span> middle=(from+to)/2
+        mergeSortHelper(arr,from,middle,temp);
+        mergeSortHelper(arr,middle+1,to,temp);
+        merge(arr,from,middle,to,temp);
+    }
+}</code></pre> 
+
+        </div>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
-        
-        
+        let text1 ="public static void selectionSort(int[] elements){\n    for (int j = 0; j < elements.length - 1; j++){\n        int minIndex = j;\n        for (int k = j + 1; k < elements.length; k++){\n            if (elements[k] < elements[minIndex]){  \n                minIndex = k;\n            }\n        }\n        if (j != minIndex){\n            int temp = elements[j];\n            elements[j] = elements[minIndex];\n            elements[minIndex] = temp;\n        }\n    }\n}";
         let text = "public static int bSearch(int[] arr, int left, int right, int x){\n   if (right >= left){\n      int mid = (left + right) / 2;\n      if (arr[mid] == x){\n         return mid;\n      }\n      else if (arr[mid] > x){\n         return bSearch(arr, left, mid - 1, x);\n      }\n      else{\n         return bSearch(arr, mid + 1, right, x);\n      }\n   }\n   return -1;\n}";
+        let text2 ="public static void mergeSortHelper(int[] arr, int from, int to, int[] temp){\n    if (from < to){\n        int middle = (from + to) / 2;\n        mergeSortHelper(arr, from, middle, temp);\n        mergeSortHelper(arr, middle + 1, to, temp);\n        merge(arr, from, middle, to, temp);\n    }\n}";
         const copyContent = async () => {
         try {
             await navigator.clipboard.writeText(text);
@@ -110,6 +175,22 @@
         } catch (err) {
             console.error('Failed to copy: ', err);
         }
-  }
+    }
+        const copyContent1 = async () => {
+        try {
+            await navigator.clipboard.writeText(text1);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
+    const copyContent2 = async () => {
+        try {
+            await navigator.clipboard.writeText(text2);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
     </script>
 </body>
