@@ -137,7 +137,8 @@
             <li>This is until the small arrays are length 1</li>
             <li>We then, merge arrays, by comparing values {1},{9} becomes {1,9}</li>
             <li>We then, get a new sorted array, we have to merge again {1,9}, {2,8} becomes {1,2,8,9}</li>
-            <li>Has a time complexity of O(n*log(n)). It stays the same.</li>
+            <li>Has a time complexity of O(n*log(n)). It stays the same no matter the input.</li>
+            <li>Has a space complexity of O(n)</li>
         </ul>
         <p>This is the implementation from ap clasroom. Merge() is not shown</p>
         <div class="bg-black">
@@ -149,7 +150,7 @@
                     <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
                 </button>
             </div>
-    <pre style="padding-bottom:1%;" class="px-4 fs-12 white"><code id="copy1"><span class="purple">public static void</span> mergeSortHelper(<span class="purple">int</span>[] elements,<span class="purple">int</span> from,<span class="purple">int</span> to,<span class="purple">int</span>[] temp){
+    <pre style="padding-bottom:1%;" class="px-4 fs-13 white"><code id="copy1"><span class="purple">public static void</span> mergeSortHelper(<span class="purple">int</span>[] elements,<span class="purple">int</span> from,<span class="purple">int</span> to,<span class="purple">int</span>[] temp){
     <span class="purple">if</span> (from&lt;to){  
         <span class="purple">int</span> middle=(from+to)/2
         mergeSortHelper(arr,from,middle,temp);
