@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="mainSytles.css">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <!-- Introduction to OOP-->
+    <nav class=" navbar navbar-expand-lg bg-blue ">
+        <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav fs-24">
+                <li class="nav-item px-5">
+                    <a class="nav-link orange px-5" href="index.html"><image class="icon" src="./media/home.svg"></image> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link orange px-5" href="aboutMe.html"><image class="icon" src="media/user.svg"></image> About Me</a>
+                </li>
+                <li class="nav-item dropdown px-5">
+                    <a class="nav-link dropdown-toggle orange px-5" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Learning <image src="media/book-open.svg">
+                    </a>
+                    <div class="dropdown-menu mx-10 bg-blue" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item orange" href="OOP.html">OOP Basics</a>
+                        <a class="dropdown-item orange" href="OOPpoly.html">OOP Relations</a>
+                        <a class="dropdown-item orange" href="arrays.html">Array/ArrayList</a>
+                        <a class="dropdown-item orange" href="searchSort.html">Search and Sort</a>
+                        <a class="dropdown-item orange" href="recursion.html">Recursion</a>
+                    </div>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link orange px-5" href="Citations.html"><image class="icon" src="media/book.svg"></image> Citations</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="bg-green p-3 px-5 fs-24">
+        <h2 class="text-center">OOP Relationships</h2>
+        <p>Classes can have different relationships in java.<br> Programs utilize these for their code to run efficently.</p>
+        <p>The four relations of classes are subclasses, super classes, abstract classes and interfaces</p>
+    </div>
+    <div class="bg-orange white col-sm p-3 px-5" >
+        <h3 class="text-center">SubClass vs Super Class</h3>
+        <p class="text-center fs-20">Going to show the difference between a subclass and super with my Software Object Project</p>
+        <table class=" mx-4 table fs-20 table-bordered polymorphismTable">
+            <tr>
+                <th scope="col">SuperClass</th>
+                <th scope="col">SubClass</th>
+            </tr>
+            <tr>
+                <td>More Generic Form of a class. Called the parent class. Can store children instances in the parent object. Downcasting require to run child's <br> non-overriding methods</td>
+                <td>Inherits the attributes and methods (More specific functionality) and can override the parent class. Its constructor needs to run parent's constructor.</td>
+            </tr>
+            <tr>
+                <td  colspan="2"> <image class="mx-auto d-block" src="media/SuperVsSubClass.png" height="200px"></image></td>
+            </tr>
+            <tr>
+                <td><div class="bg-black">
+                    <div class="d-flex justify-content-end white fs-14">
+                        <div>
+                            <p class="px-1" style="padding-top:20%">Copy</p>
+                        </div>
+                        <button id="copyButton" style="margin-bottom:1%;" title="Copied!" data-placement="top" onclick="copyContent()" class="btn bg-dark" >
+                            <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+                        </button>
+                    </div>
+                <pre class="noPadding fs-12 white p-3"><code id="copy1"><span class="purple">import</span> java.lang.Math;
+<span class="purple">public class</span> TiposedLarenim {
+    <span class="purple">static int</span> population=100;
+    <span class="purple">String</span> name;
+    <span class="purple">double</span> latitude=0;
+    <span class="purple">double</span> longitude=0;
+    <span class="purple">double</span> weight;
+    <span class="purple">boolean</span> submerged=false;
+    <span class="purple">double</span> energy;
+    <span class="purple">int</span> age;
+    <span class="purple">String</span>[] possibleOres = {"iron","gold","palladium","diamond","platinum","lithium"};
+    <span class="purple">String</span> ores="";
+    <span class="purple">public</span> TiposedLarenim(){
+        name="greg";
+        latitude=0;
+        longitude=0;
+        weight=200;
+        energy=100;
+        this.age=100;
+    }  
+    <span class="purple">public</span> TiposedLarenim(<span class="purple">String</span> n, <span class="purple">double</span> la,<span class="purple">double</span> lo, <span class="purple">double</span> w, <span class="purple">double</span> e, <span class="purple">int</span> age){
+        name=n;
+        latitude=la;
+        longitude=lo;
+        weight=w;
+        energy=e;
+        this.age=age;
+    }
+    <span class="purple">public boolean</span> eat(<span class="purple">String</span> food, <span class="purple">int</span>[] heights){
+        <span class="purple">if</span>((food.equals("trees") && ! submerged) || (food.equals("coral") && submerged)){
+            <span class="purple">for</span>(<span class="purple">int</span> i=0;i&ltheights.length;i++){
+                <span class="purple">if</span>(energy>=100){
+                    generateOres();
+                    energy-=50;
+                    weight+=5;
+                }<span class="purple">else</span>{
+                    energy+= Math.pow(heights[i],1.1);
+                    weight++;
+                }
+            }
+            move();
+            return true;
+        }
+        return false;
+    }
+    <span class="purple">public void</span> move(){
+        <span class="purple">double</span> movelat = Math.random()*10-5;
+        <span class="purple">double</span> movelong = Math.random()*10-5;
+        latitude+=movelat;
+        longitude+=movelong;
+        <span class="purple">if</span>(latitude>180 || latitude&lt-180){
+            <span class="purple">double</span> newLatitude= latitude>180 ? latitude-movelat*2 : latitude+movelat*2;
+            latitude=newLatitude*-1;
+        }<span class="purple">if</span>(longitude>90 || longitude&lt-90){
+            <span class="purple">double</span> newLongitude= latitude>90 ? latitude-movelat*2 : latitude+movelat*2;
+            longitude=newLongitude*-1;
+        }
+    }
+    <span class="purple">public void</span> generateOres(){
+        <span class="purple">int</span> index= (<span class="purple">int</span>) Math.floor(Math.random()*(possibleOres.length-0.1));
+        <span class="purple">String</span> ore= possibleOres[index];
+        <span class="purple">double</span> amount = Math.round((Math.random()+1)*weight*2)/50;
+        ores+=amount+" kgs of "+ore+", ";
+    }
+    <span class="purple">public void</span> setSubmerged(boolean sub){
+        submerged=sub;
+    }
+    <span class="purple">public String</span>  harvestOres(){
+        <span class="purple">String</span> harvestedOres=ores;
+        ores="";
+        return harvestedOres;
+    }
+    <span class="purple">public boolean</span> breed(TiposedLarenim other){
+        <span class="purple">if</span>(Math.ceil(this.latitude) == Math.ceil(other.latitude) 
+        && Math.ceil(this.longitude) == Math.ceil(other.longitude)){
+            population++;
+            <span class="purple">return true</span>;
+        }
+        <span class="purple">return false</span>;
+    }
+}</code></pre>  
+                </div></td>
+            <td>
+                <div class="bg-black">
+                    <div class="d-flex justify-content-end white fs-14">
+                        <div>
+                            <p class="px-1" style="padding-top:20%">Copy</p>
+                        </div>
+                        <button id="copyButton" style="margin-bottom:1%;" title="Copied!" data-placement="top" onclick="copyContent1()" class="btn bg-dark" >
+                            <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+                        </button>
+                    </div>
+                <pre class="noPadding fs-12 white p-3"><code id="copy1"><span class="purple">public class</span> FlyingTiposedLarenim <span class="purple">extends</span> TiposedLarenim{
+    <span class="purple">private boolean</span> overWater=false;
+    <span class="purple">private double</span> altitude;
+    <span class="purple">public</span> FlyingTiposedLarenim(){
+        super();
+        altitude=1500;
+        possibleOres= new String [1];
+        possibleOres[0]="gold";
+    }
+    <span class="purple">public</span> FlyingTiposedLarenim(String n, <span class="purple">double</span> la,<span class="purple">double</span> lo, <span class="purple">double</span> w, <span class="purple">double</span> e, <span class="purple">int</span> age, <span class="purple">double</span> a, String o){
+        super(n,la,lo,w,e,age);
+        altitude=a;
+        possibleOres= new String [1];
+        possibleOres[0]=o;
+    }
+    <span class="purple">public void</span> move(){
+        <span class="purple">double</span> movelat = Math.random()*10-5;
+        <span class="purple">double</span> movelong = Math.random()*10-5;
+        <span class="purple">double</span> moveAlt = Math.random()*5000-altitude;
+        latitude+=movelat;
+        longitude+=movelong;
+        altitude+=moveAlt;
+        if(latitude>180 || latitude&lt;-180){
+            <span class="purple">double</span> newLatitude= latitude>180 ? latitude-movelat*2 : latitude+movelat*2;
+            latitude=newLatitude*-1;
+        }if(longitude>90 || longitude&lt;-90){
+            <span class="purple">double</span> newLongitude= latitude>90 ? latitude-movelat*2 : latitude+movelat*2;
+            longitude=newLongitude*-1;
+        }
+    }
+    <span class="purple">public void</span> overWater(<span class="purple">boolean</span> ow){
+        overWater=ow;
+        if(altitude&lt;3000){
+            altitude&#61;altitude-altitude-300;
+            submerged&#61;true;
+        }
+    }
+    <span class="purple">public void</span> setSubmerged(<span class="purple">boolean</span> sub){
+        <span class="purple">return</span>;
+    }
+    <span class="purple">public boolean</span> breed(FlyingTiposedLarenim other){
+        if(Math.ceil(this.latitude) &#61;&#61; Math.ceil(other.latitude) 
+        && Math.ceil(this.longitude) &#61;&#61; Math.ceil(other.longitude) 
+        && Math.abs(this.altitude-1000)<=other.altitude){
+            population++;
+            <span class="purple">return true</span>;
+        }
+        <span class="purple">return false</span>;
+    }
+}</code></pre>  
+                </div>
+            <p class="fs-24 black p-3">There is much less code for the sub-class compared to the parent class. By extending a class, you allow the child class to inherit the functionality of the parent. Meaning, you don't need to rewrite methods unless you are overriding them.</p></td>
+            </tr>
+            </table>
+        </div>
+    <div class="bg-pink p-3">
+        <h2 class="text-center">Polymorphism</h2>
+        <p class="fs-20">Did you know that you can set a super class variable to an instance of a sub class. Like, so <div class="bg-black white fs-14 m-3 p-3">TiposedLarenim myCreature= <span class="purple">new</span> FlyingTiposedLarenim();</div><span class="fs-20">However, if you want to run a function, that is exclusive to FlyingTiposedLarenim: overWater() for Example, you would need to down cast it like</span> <div class="bg-black white fs-14 m-3 p-3">(FlyingTiposedLarenim myCreature).overWater()</div><span class="fs-20">All Overriden methods are accesible without downcasting and when called it will use the overriden method from the subclass.</span></p>
+    </div>
+    <div class="bg-black white p-3">
+        <h3 class="text-center">Abstract Classes vs Interfaces</h3>
+        <div class="d-flex justify-content-center">
+            <table class=" table fs-20 table-bordered abstractClassTable">
+                <tr>
+                    <th scope="col">Abstract Class</th>
+                    <th scope="col">Interfaces</th>
+                </tr>
+                <tr>
+                    <td>Acts like a normal class, but has some undefined functions for methods called abstract methods. These are to be overriden by a subclass. If all abstract methods are not overriden by child, child must be abstract.</td>
+                    <td>An abstract class, but it cannot define any functions. It also can't set any attributes. It is a list of methods needed for classes that implement the interface. If all methods are not implemented, class becomes abstract.</td>
+                </tr>
+                <tr>
+                    <td><p>Here is an abstract class room I made for the Fantasy Assignment</p>
+                        <div class="d-flex justify-content-end white fs-14">
+                        <div>
+                            <p class="px-1" style="padding-top:20%">Copy</p>
+                        </div>
+                        <button id="copyButton" style="margin-bottom:1%;" title="Copied!" data-placement="top" onclick="copyContent2()" class="btn bg-dark" >
+                            <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+                        </button>
+                    </div>
+                <pre class="noPadding fs-12 white p-3"><code id="copy1"><span class="purple">public abstract class</span> java.util.*;
+<span class="purple">public abstract class</span> Room{
+    <span class="purple">protected</span> String roomType;
+    <span class="purple">protected</span> ArrayList&lt;MythicalCreature&gt; creaturesInside; 
+    <span class="purple">public</span> Room(String rt){
+        creaturesInside= <span class="purple">new</span> ArrayList&lt;MythicalCreate&gt;();
+        roomType=rt;
+    }
+    <span class="purple">public abstract void</span> interact(MythicalCreature a);
+    <span class="purple">public void</span> enter(MythicalCreature x){
+        if(MythicalCreature instanceof goblin && creaturesInside.size()>0){
+            for(MythicalCreature y : creaturesInside){
+            ((goblin) x).stealGold(y);
+            }
+        }
+        creaturesInside.add(x);
+        interact(x);
+    }<span class="purple">public void</span> exit(MythicalCreature x){
+        creaturesInside.remove(x);
+    }<span class="purple">public</span> String getRoomType(){
+        <span class="purple">return</span> roomType;
+    }<span class="purple">public</span> ArrayList&lt;MythicalCreature&gt;  getCreaturesInside(){
+        <span class="purple">return</span> creaturesInside;
+    }
+}</code></pre></div></td>
+                    <td><p>I didn't use any interfaces for projects, but here is one from a practice test</p>
+                        <div class="d-flex justify-content-end white fs-14">
+                        <div>
+                            <p class="px-1" style="padding-top:20%">Copy</p>
+                        </div>
+                        <button id="copyButton" style="margin-bottom:1%;" title="Copied!" data-placement="top" onclick="copyContent3()" class="btn bg-dark" >
+                            <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+                        </button>
+                    </div>
+                <pre class="noPadding fs-20 white p-3"><code id="copy1"><span class="purple">public interface</span> Computable{
+    //Return this Object + y. 
+    Object add (Object y);
+    //Return this Object - y. 
+    Object subtract (Object y);
+    //Return this Object y. 
+    Object multiply (Object y);
+}</code></pre>
+                    <p>Interfaces are practically checklists for functions and why it is only used if there are a lot of functions required for a program. Graphics program would use Interfaces as there is a decent amount of methods required.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        let text = "import java.lang.Math;\npublic class TiposedLarenim {\n   static int population=100;\n   String name;\n   double latitude=0;\n   double longitude=0;\n   double weight;\n   boolean submerged=false;\n   double energy;\n   int age;\n   String[] possibleOres = {\"iron\",\"gold\",\"palladium\",\"diamond\",\"platinum\",\"lithium\"};\n   String ores=\"\";\n   public TiposedLarenim(){\n      name=\"greg\";\n      latitude=0;\n      longitude=0;\n      weight=200;\n      energy=100;\n      this.age=100;\n   }  \n   public TiposedLarenim(String n, double la,double lo, double w, double e, int age){\n      name=n;\n      latitude=la;\n      longitude=lo;\n      weight=w;\n      energy=e;\n      this.age=age;\n   } \n   public boolean eat(String food, int[] heights){\n      if((food.equals(\"trees\") && ! submerged) || (food.equals(\"coral\") && submerged)){\n         for(int i=0;i<heights.length;i++){\n            if(energy>=100){\n               generateOres();\n               energy-=50;\n               weight+=5;\n            }else{\n               energy+= Math.pow(heights[i],1.1);\n               weight++;\n            }\n         }\n         move();\n         return true;\n      }\n      return false;\n   }\n   public void move(){\n      double movelat = Math.random()*10-5;\n      double movelong = Math.random()*10-5;\n      latitude+=movelat;\n      longitude+=movelong;\n      if(latitude>180 || latitude<-180){\n         double newLatitude= latitude>180 ? latitude-movelat*2 : latitude+movelat*2;\n         latitude=newLatitude*-1;\n      }if(longitude>90 || longitude<-90){\n         double newLongitude= latitude>90 ? latitude-movelat*2 : latitude+movelat*2;\n         longitude=newLongitude*-1;\n      }\n   }\n   public void generateOres(){\n      int index= (int) Math.floor(Math.random()*(possibleOres.length-0.1));\n      String ore= possibleOres[index];\n      double amount = Math.round((Math.random()+1)*weight*2)/50;\n      ores+=amount+\" kgs of \"+ore+\", \";\n   }\n   public void setSubmerged(boolean sub){\n      submerged=sub;\n   }\n   public String harvestOres(){\n      String harvestedOres=ores;\n      ores=\"\";\n      return harvestedOres;\n   }\n   public boolean breed(TiposedLarenim other){\n      if(Math.ceil(this.latitude) == Math.ceil(other.latitude) \n      && Math.ceil(this.longitude) == Math.ceil(other.longitude)){\n         population++;\n         return true;\n      }\n      return false;\n   }\n   public String toString(){\n      return \"population: \"+population+ \"\\n\"+ \"weight: \" + weight + \"kg\"+\"\\n\" +\"Age:\" +age +\"\\n\" + \"latitude: \" + (latitude>=0? latitude: latitude*-1) + (latitude>=0? \" E\" :\" W\") +\"\\n\" + \"Longitude: \"+ (longitude>=0? longitude : longitude*-1) + (longitude>=0? \" N\" :\" S\") + \"\\n\" + \"Sumberged: \" + submerged+ \"\\n\" + \"Energy: \" + energy + \"\\n\" + \"Ores: \"+ ores;\n   }\n}\n";
+        let text1="public class FlyingTiposedLarenim extends TiposedLarenim{\n   private boolean overWater=false;\n   private double altitude;\n   public FlyingTiposedLarenim(){\n      super();\n      altitude=1500;\n      possibleOres= new String [1];\n      possibleOres[0]=\"gold\";\n   }\n   public FlyingTiposedLarenim(String n, double la,double lo, double w, double e, int age, double a, String o){\n      super(n,la,lo,w,e,age);\n      altitude=a;\n      possibleOres= new String [1];\n      possibleOres[0]=o;\n   }\n   public void move(){\n      double movelat = Math.random()*10-5;\n      double movelong = Math.random()*10-5;\n      double moveAlt = Math.random()*5000-altitude;\n      \n      latitude+=movelat;\n      longitude+=movelong;\n      altitude+=moveAlt;\n      if(latitude>180 || latitude<-180){\n         double newLatitude= latitude>180 ? latitude-movelat*2 : latitude+movelat*2;\n         latitude=newLatitude*-1;\n      }if(longitude>90 || longitude<-90){\n         double newLongitude= latitude>90 ? latitude-movelat*2 : latitude+movelat*2;\n         longitude=newLongitude*-1;\n      }\n   }\n   public void overWater(boolean ow){\n      overWater=ow;\n      if(altitude<3000){\n         altitude=altitude-altitude-300;\n         submerged=true;\n      }\n   }\n   public void setSubmerged(boolean sub){\n      return;\n   }\n   public boolean breed(FlyingTiposedLarenim other){\n      if(Math.ceil(this.latitude) == Math.ceil(other.latitude) && Math.ceil(this.longitude) == Math.ceil(other.longitude) && Math.abs(this.altitude-1000)<=other.altitude){\n         population++;\n         return true;\n      }\n      return false;\n   }\n   public String toString(){\n      return \"population: \"+population+ \"\\n\"+ \"weight: \" + weight + \"kg\"+\"\\n\" +\"Age:\" +age +\"\\n\" + \"latitude: \" + (latitude>=0 ? Math.round(latitude*100)/100.0 : Math.round(latitude*100)/-100.0) + (latitude>=0? \" E\" :\" W\") +\"\\n\" + \"Longitude: \"+ (longitude>=0? Math.round(longitude*100)/100.0 : Math.round(longitude*100)/-100.0) + (longitude>=0? \" N\" :\" S\") + \"\\n\" + \"Altitude: \"+ Math.round(altitude*100)/100.0 + \"m above sea level\"+\"\\n\" + \"Over water: \"+ overWater+\"\\n\"+ \"Sumberged: \" + submerged+ \"\\n\" + \"Energy: \" + energy + \"\\n\" + \"Ores: \"+ ores;\n   }\n\n}";
+        let text2="import java.util.*;\npublic abstract class  Room{\n   protected String roomType;\n   protected ArrayList<MythicalCreature> creaturesInside; \n   public Room(String rt){\n      creaturesInside= new ArrayList<MythicalCreate>();\n      roomType=rt;\n   }\n   public abstract void interact(MythicalCreature a);\n   public void enter(MythicalCreature x){\n      if(MythicalCreature instanceof goblin && creaturesInside.size()>0){\n         for(MythicalCreature y : creaturesInside){\n            ((goblin) x).stealGold(y);\n         }\n      }\n      creaturesInside.add(x);\n      interact(x);\n   }public void exit(MythicalCreature x){\n      creaturesInside.remove(x);\n   }public String getRoomType(){\n      return roomType;\n   }public ArrayList<MythicalCreature>  getCreaturesInside(){\n      return creaturesInside;\n   }\n}";
+        let text3=""
+        const copyContent = async () => {
+        try {
+            await navigator.clipboard.writeText(text);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+        }
+        const copyContent1 = async () => {
+        try {
+            await navigator.clipboard.writeText(text1);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+        }
+        const copyContent2 = async () => {
+        try {
+            await navigator.clipboard.writeText(text2);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+        }
+        const copyContent3 = async () => {
+        try {
+            await navigator.clipboard.writeText(text3);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+        }
+    </script>
+</body>
+
+</html>

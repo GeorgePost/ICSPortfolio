@@ -28,11 +28,15 @@
                     Learning <image src="media/book-open.svg">
                     </a>
                     <div class="dropdown-menu mx-10 bg-blue" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item orange" href="OOP.html">OOP</a>
+                        <a class="dropdown-item orange" href="OOP.html">OOP Basics</a>
+                        <a class="dropdown-item orange" href="OOPpoly.html">OOP Relations</a>
                         <a class="dropdown-item orange" href="arrays.html">Array/ArrayList</a>
                         <a class="dropdown-item orange" href="searchSort.html">Search and Sort</a>
                         <a class="dropdown-item orange" href="recursion.html">Recursion</a>
                     </div>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link orange px-5" href="Citations.html"><image class="icon" src="media/book.svg"></image> Citations</a>
                 </li>
             </ul>
         </div>
@@ -40,19 +44,18 @@
     <div class="bg-black white p-4">
         <h1 class="text-center">Object Oriented Programing(OOP)</h1>
     </div>
-    <div style="width:101%" class="row fs-24 ">
-    <div class="col-md bg-orange px-5 p-3">
+    <div class="col-md bg-orange px-5 p-3 fs-24">
         <h2>Objects</h2>
         <ul>
             <li>A way to view the world</li>
             <li>Some Terms Asscoiated with OOP</li>
         </ul>
-        <table class="table">
+        <table class="table table-bordered">
             <tr>
-               <th scope="col">Object</th> 
-               <th scope="col">Method</th>
-               <th scope="col">Attributes</th>
-               <th scope="col">Constructor</th>
+               <th style="width:25%" scope="col">Object</th> 
+               <th style="width:25%" scope="col">Method</th>
+               <th style="width:25%" scope="col">Attributes</th>
+               <th style="width:25%" scope="col">Constructor</th>
             </tr>
             <tr>
                 <td>An instance of a class</td>
@@ -60,11 +63,120 @@
                 <td>Variables within an object</td>
                 <td>Method: creates the object and assigns attributes.</td>
             </tr>
+            
+
         </table>
+        <p>Here is my UML for my OOP project Tiposed Larenim. Also, my tiposedLarenim Class in Java.(toString and comment are removed for space)</p>
     </div>
     <!--Image of an example-->
-    <div class="col-sm bg-green" >
-        <image class="d-block mx-auto" src="media/OOPExample.png" width="80%">
+    <div class="row bg-green">
+        <div style="font-size:24px" class="col-sm">
+            <table  class="table table-bordered">
+                <tr>
+                    <td class="text-center"><h1>TiposedLarenim</h1></td>
+                </tr>
+                <tr>
+                    <td>#population:int<br>#name : String<br>#longitude:double<br>#latitude:double<br>#submerged:boolean<br>#energy:double<br>#possibleOres : String[]<br>#age: int<br>#ores : String</td>
+                </tr>
+                <tr>
+                    <td>+ TiposedLarenim()<br>+ TiposedLarenim(n:String, la:double, lo:double, w:double, e:double, age:int)<br>+ eat(food:String,heights:int[]):boolean<br>+ move():void<br>+ generateOres():void<br>+ setSubmerged(sub: boolean):void<br>+ harvestOres():String<br>+ breed(other: TiposedLarenim): boolean<br>+toString():String
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bg-black col-md">
+            <div class="d-flex justify-content-end white fs-7">
+                <div>
+                    <p class="px-1" style="padding-top:20%">Copy</p>
+                </div>
+                <button id="copyButton" style="margin-bottom:1%;" title="Copied!" data-placement="top" onclick="copyContent()" class="btn bg-dark" >
+                    <image style="filter: brightness(0) invert(1);" class="d-block m-auto" src="media/copy.png" height="15"></image>
+                </button>
+            </div>
+        <pre class="noPadding fs-12 white p-3"><code id="copy1"><span class="purple">import</span> java.lang.Math;
+<span class="purple">public class</span> TiposedLarenim {
+    <span class="purple">static int</span> population=100;
+    <span class="purple">String</span> name;
+    <span class="purple">double</span> latitude=0;
+    <span class="purple">double</span> longitude=0;
+    <span class="purple">double</span> weight;
+    <span class="purple">boolean</span> submerged=false;
+    <span class="purple">double</span> energy;
+    <span class="purple">int</span> age;
+    <span class="purple">String</span>[] possibleOres = {"iron","gold","palladium","diamond","platinum","lithium"};
+    <span class="purple">String</span> ores="";
+    <span class="purple">public</span> TiposedLarenim(){
+        name="greg";
+        latitude=0;
+        longitude=0;
+        weight=200;
+        energy=100;
+        this.age=100;
+    }  
+    <span class="purple">public</span> TiposedLarenim(<span class="purple">String</span> n, <span class="purple">double</span> la,<span class="purple">double</span> lo, <span class="purple">double</span> w, <span class="purple">double</span> e, <span class="purple">int</span> age){
+        name=n;
+        latitude=la;
+        longitude=lo;
+        weight=w;
+        energy=e;
+        this.age=age;
+    }
+    <span class="purple">public boolean</span> eat(<span class="purple">String</span> food, <span class="purple">int</span>[] heights){
+        <span class="purple">if</span>((food.equals("trees") && ! submerged) || (food.equals("coral") && submerged)){
+            <span class="purple">for</span>(<span class="purple">int</span> i=0;i&ltheights.length;i++){
+                <span class="purple">if</span>(energy>=100){
+                    generateOres();
+                    energy-=50;
+                    weight+=5;
+                }<span class="purple">else</span>{
+                    energy+= Math.pow(heights[i],1.1);
+                    weight++;
+                }
+            }
+            move();
+            return true;
+        }
+        return false;
+    }
+    <span class="purple">public void</span> move(){
+        <span class="purple">double</span> movelat = Math.random()*10-5;
+        <span class="purple">double</span> movelong = Math.random()*10-5;
+        latitude+=movelat;
+        longitude+=movelong;
+        <span class="purple">if</span>(latitude>180 || latitude&lt-180){
+            <span class="purple">double</span> newLatitude= latitude>180 ? latitude-movelat*2 : latitude+movelat*2;
+            latitude=newLatitude*-1;
+        }<span class="purple">if</span>(longitude>90 || longitude&lt-90){
+            <span class="purple">double</span> newLongitude= latitude>90 ? latitude-movelat*2 : latitude+movelat*2;
+            longitude=newLongitude*-1;
+        }
+    }
+    <span class="purple">public void</span> generateOres(){
+        <span class="purple">int</span> index= (<span class="purple">int</span>) Math.floor(Math.random()*(possibleOres.length-0.1));
+        <span class="purple">String</span> ore= possibleOres[index];
+        <span class="purple">double</span> amount = Math.round((Math.random()+1)*weight*2)/50;
+        ores+=amount+" kgs of "+ore+", ";
+    }
+    <span class="purple">public void</span> setSubmerged(boolean sub){
+        submerged=sub;
+    }
+    <span class="purple">public String</span>  harvestOres(){
+        <span class="purple">String</span> harvestedOres=ores;
+        ores="";
+        return harvestedOres;
+    }
+    <span class="purple">public boolean</span> breed(TiposedLarenim other){
+        <span class="purple">if</span>(Math.ceil(this.latitude) == Math.ceil(other.latitude) 
+        && Math.ceil(this.longitude) == Math.ceil(other.longitude)){
+            population++;
+            return true;
+        }
+        return false;
+    }
+}</code></pre>  
+        </div>
+        </div>
+    </div>
     </div>
     </div>
     <!--Modifers-->
@@ -82,7 +194,7 @@
         <ul class="fs-24">
             <li>Decides were a method or attribute could be accessed(scope)</li>
         </ul>
-        <table class="table fs-20 table-bordered AccessModiferTable">
+        <table class="table fs-18 table-bordered AccessModiferTable">
             <tr>
                 <th scope="col">Modifer</th>
                 <th scope="col">Class</th>
@@ -119,55 +231,18 @@
                 <td class="bg-danger"></td>
             </tr>
             <tr>
-                <td class="fs-14" colspan="5">The difference, between protected and default is that protected can access subclasses outside of a package. </td>
+                <td class="fs-12" colspan="5">The difference, between protected and default is that protected can access subclasses outside of a package. </td>
             </tr>
         </table>
         </div>
         <div class="p-3 col-md bg-orange">
             <h3 class="">Keywords</h3>
             <p class="fs-24">Here are some Useful Keywords in OOP</p>
-            <p class="fs-24 px-3"><span class="purple font-weight-bold">this</span>: Refers to the class, used to not create confusion between local variables and class attribtues</p>
-            <p class="fs-24 px-3"><span class="purple font-weight-bold">static</span>: attributes or methods that belong to the class no the object (Population in TiposedLarenim Project)</p>
-            <p class="fs-24 px-3"><span class="purple font-weight-bold">final</span>: Once an attribute is intialized it can no longer change.</p> 
-            <p class="fs-24 px-3"><span class="purple font-weight-bold">abstract</span>: It is a method that its function has not been defined. Classes that contains these methods are Abstract</p>
-        </div>
-    </div>
-    <div style="width:101%" class="row">
-        <div class="bg-blue white col-sm p-3 px-5" >
-            <h3 class="text-center">SubClass vs Super Class</h3>
-            <table class=" mx-4 table fs-20 table-bordered polymorphismTable">
-                <tr>
-                    <th scope="col">SuperClass</th>
-                    <th scope="col">SubClass</th>
-                </tr>
-                <tr>
-                    <td>More Generic Form of a class. Called the parent class. Can store children instances in the parent object. Downcasting require to run child's <br> non-overriding methods</td>
-                    <td>Inherits the attributes and methods (More specific functionality) and can override the parent class. Its constructor needs to run parent's constructor.</td>
-                </tr>
-                <tr>
-                    <td  colspan="2"> <image class="mx-auto d-block" src="media/SuperVsSubClass.png" height="200px"></image></td>
-                </tr> 
-            </table>
-        </div>
-        <div class="bg-black white col-sm p-3 ">
-            
-            <h3 class="text-center">Abstract Classes vs Interfaces</h3>
-            <div class="d-flex justify-content-center">
-            <table style="width:45%" class=" table fs-20 table-bordered abstractClassTable">
-                <tr>
-                    <th scope="col">Abstract Class</th>
-                    <th scope="col">Interfaces</th>
-                </tr>
-                <tr>
-                    <td>Acts like a normal class, but has some undefined functions for methods called abstract methods. These are to be overriden by a subclass. If all abstract methods are not overriden by child, child must be abstract.</td>
-                    <td>An abstract class, but it cannot define any functions. It also can't set any attributes. It is a list of methods needed for classes that implement the interface. If all methods are not implemented, class becomes abstract.</td>
-                </tr>
-                <tr>
-                    <td><image src="media/AbstractClass.png" height="150"></image></td>
-                    <td><image src="media/Interface.png" height="135"></image></td>
-                </tr>
-            </table>
-            </div>
+            <p class="fs-18 px-3"><span class="purple font-weight-bold">this</span>: Refers to the class, used to not create confusion between local variables and class attribtues</p>
+            <p class="fs-18 px-3"><span class="purple font-weight-bold">static</span>: attributes or methods that belong to the class no the object (Population in TiposedLarenim Project)</p>
+            <p class="fs-18 px-3"><span class="purple font-weight-bold">final</span>: Once an attribute is intialized it can no longer change.</p> 
+            <p class="fs-18 px-3"><span class="purple font-weight-bold">abstract</span>: It is a method that its function has not been defined. Classes that contains these methods are Abstract</p>
+            <p class="fs-18 px-3"><span class="purple font-weight-bold">Super</span>: Refers to the super class. You can use it as a variable to access methods super.Area(); or use it for the constuctor super()</p>
         </div>
     </div>
     <!-- Optional JavaScript -->
@@ -175,6 +250,18 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        let text = "import java.lang.Math;\npublic class TiposedLarenim {\n   static int population=100;\n   String name;\n   double latitude=0;\n   double longitude=0;\n   double weight;\n   boolean submerged=false;\n   double energy;\n   int age;\n   String[] possibleOres = {\"iron\",\"gold\",\"palladium\",\"diamond\",\"platinum\",\"lithium\"};\n   String ores=\"\";\n   public TiposedLarenim(){\n      name=\"greg\";\n      latitude=0;\n      longitude=0;\n      weight=200;\n      energy=100;\n      this.age=100;\n   }  \n   public TiposedLarenim(String n, double la,double lo, double w, double e, int age){\n      name=n;\n      latitude=la;\n      longitude=lo;\n      weight=w;\n      energy=e;\n      this.age=age;\n   } \n   public boolean eat(String food, int[] heights){\n      if((food.equals(\"trees\") && ! submerged) || (food.equals(\"coral\") && submerged)){\n         for(int i=0;i<heights.length;i++){\n            if(energy>=100){\n               generateOres();\n               energy-=50;\n               weight+=5;\n            }else{\n               energy+= Math.pow(heights[i],1.1);\n               weight++;\n            }\n         }\n         move();\n         return true;\n      }\n      return false;\n   }\n   public void move(){\n      double movelat = Math.random()*10-5;\n      double movelong = Math.random()*10-5;\n      latitude+=movelat;\n      longitude+=movelong;\n      if(latitude>180 || latitude<-180){\n         double newLatitude= latitude>180 ? latitude-movelat*2 : latitude+movelat*2;\n         latitude=newLatitude*-1;\n      }if(longitude>90 || longitude<-90){\n         double newLongitude= latitude>90 ? latitude-movelat*2 : latitude+movelat*2;\n         longitude=newLongitude*-1;\n      }\n   }\n   public void generateOres(){\n      int index= (int) Math.floor(Math.random()*(possibleOres.length-0.1));\n      String ore= possibleOres[index];\n      double amount = Math.round((Math.random()+1)*weight*2)/50;\n      ores+=amount+\" kgs of \"+ore+\", \";\n   }\n   public void setSubmerged(boolean sub){\n      submerged=sub;\n   }\n   public String harvestOres(){\n      String harvestedOres=ores;\n      ores=\"\";\n      return harvestedOres;\n   }\n   public boolean breed(TiposedLarenim other){\n      if(Math.ceil(this.latitude) == Math.ceil(other.latitude) \n      && Math.ceil(this.longitude) == Math.ceil(other.longitude)){\n         population++;\n         return true;\n      }\n      return false;\n   }\n   public String toString(){\n      return \"population: \"+population+ \"\\n\"+ \"weight: \" + weight + \"kg\"+\"\\n\" +\"Age:\" +age +\"\\n\" + \"latitude: \" + (latitude>=0? latitude: latitude*-1) + (latitude>=0? \" E\" :\" W\") +\"\\n\" + \"Longitude: \"+ (longitude>=0? longitude : longitude*-1) + (longitude>=0? \" N\" :\" S\") + \"\\n\" + \"Sumberged: \" + submerged+ \"\\n\" + \"Energy: \" + energy + \"\\n\" + \"Ores: \"+ ores;\n   }\n}\n";
+        const copyContent = async () => {
+        try {
+            await navigator.clipboard.writeText(text);
+            console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+  }
+    </script>
 </body>
 
 </html>
+
